@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 // use async to wait for response
 app.get("/", async (req, res) => {
-  
+  res.render('index.ejs')
 });
 
 app.post("/add", async (req, res) => {
