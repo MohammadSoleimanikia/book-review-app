@@ -17,9 +17,12 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+let data=[
+  {img:'img/cover.jpg',book_name:'THE MIGHTY RED',author:"louise erdrich"}
+]
 // use async to wait for response
 app.get("/", async (req, res) => {
-  res.render('index.ejs')
+  res.render('index.ejs',{book:data})
 });
 
 app.post("/add", async (req, res) => {
