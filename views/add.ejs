@@ -1,0 +1,67 @@
+<%- include('partials/header.ejs') %>
+<main>
+  <div class="new-container">
+    <h2>Add a New Book Review</h2>
+    <form action="/add" method="post">
+      <div class="book-info">
+        <div class="form-group">
+          <label for="book-name">Book Name</label>
+          <input type="text" name="book-name" id="book-name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="author-name">Author Name</label>
+          <input type="text" name="author-name" id="author-name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="book-topics">Choose a Book Genre:</label>
+          <select name="book-topics" id="book-topics" required>
+            <option value="" disabled selected >
+              --Please choose an option--
+            </option>
+            <option value="romance">Romance</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="science-fiction">Science Fiction</option>
+            <option value="thriller">Crime and Thriller</option>
+            <option value="memoir">Memoir and Biography</option>
+            <option value="children">Children's Books</option>
+            <option value="true-crime">True Crime</option>
+            <option value="self-help">Self-Help</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="review">Review:</label>
+          <textarea
+            cols="50"
+            name="review"
+            id="review"
+            placeholder="Write your review here..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="rating">Select Rating:</label>
+          <select id="rating" name="rating" required>
+            <option value="" disabled selected>Select your rating</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script>
+  // You can add any necessary JavaScript here
+</script>
+
+<%- include('partials/footer.ejs') %>
